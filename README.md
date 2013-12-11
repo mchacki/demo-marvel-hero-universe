@@ -3,7 +3,8 @@
 
 ### Setup
 
-Before starting this app you have to download the data files (not included here)
+Before starting this app you have to download the [data files](https://github.com/triAGENS/ArangoDB-Data/tree/master/Graphs/Marvel%20Universe) (not included here)
+
 
 ## Installation
 
