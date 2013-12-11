@@ -1,0 +1,36 @@
+{
+  "name": "marvel-universe",
+  "version": "1.0.0",
+  "description": "An Application to view the marvel super heros universe. Frontend build with AngularJS.",
+  "author": "Michael Hackstein",
+  "license": "Apache 2 License",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mchacki/marvel-universe.git"
+  },
+  "keywords": [
+    "marvel",
+    "graph",
+    "demo"
+  ],
+  "engines": {
+    "arangodb": "1.4"
+  },
+  "controllers": {
+    "/": "marvel.js"
+  },
+  "setup": "scripts/setup.js",
+  "assets": {
+    "index.html": {
+      "files": [
+        "assets/index.html"
+      ]
+    },
+    "application.js": {
+      "files" : [
+        "assets/app.js"
+      ]
+    }
+  },
+  "lib": "."
+}

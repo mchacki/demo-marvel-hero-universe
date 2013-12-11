@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" ng-app="ProfileManager">
+  <head>
+    <meta charset="utf-8">
+    <title>Profile Manager</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-resource.js"></script>
+    <script src="application.js"></script>
+  </head>
+  <body>
+    <section id="profilemanager" ng-controller="ProfileController" class="container">
+      <section id="header">
+        <h1>Profiles</h1>
+        <div class="control-group">
+          <label for="userSelection">Select a profile:</label>
+          <span class="nullable" id="userSelection">
+            <select ng-model="profile" ng-options="p.name for p in profiles" ng-click="loadUser()">
+              <option value="">--- choose a user ---</option>
+            </select>
+          </span>
+        </div>
+        <div class="control-group">
+          <button type="button" class="btn btn-success" ng-click="create()">Add new user</button>
+        </div>
+      </section>
+      <section id="main" ng-show="!!profile._key">
+        <form>
+          <div class="form-group">
+            <label for="userName">User name:</label>
+            <input type="text" id="userName" class="form-control" ng-model="profile.name">
+          </div>
+          <div class="form-group">
+            <label for="userEmail">User email:</label>
+            <input type="text" id="userEmail" class="form-control" ng-model="profile.email">
+          </div>
+          <div class="control-group">
+            <button type="button" class="btn btn-success" ng-click="save()">Save</button>
+            <button type="button" class="btn btn-danger" ng-click="delete()">Delete</button>
+          </div>
+        </form>
+      </section>
+    </section>
+  </body>
+</html>
