@@ -33,6 +33,7 @@
 
   var _ = require("underscore"),
     Foxx = require("org/arangodb/foxx"),
+    db = require("internal").db,
     Heros;
   Heros = Foxx.Repository.extend({
     // Display all elements in the collection
@@ -44,7 +45,11 @@
     },
 
     like: function(content) {
-      return _.map(this.collection.fulltext("name", content).toArray(), function (rawHero) {
+      var query = "FOR h in @@col filter like(h.name, @str, true) return h";
+      return _.map(db._query(query, {
+        "@col": this.collection.name(),
+        str: "%" + content + "%"
+      }).toArray(), function (rawHero) {
         var hero = new this.modelPrototype(rawHero);
         return hero;
       }, this);

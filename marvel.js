@@ -90,20 +90,21 @@
       ), 10
     );
     var result = {
-      nodes: {},
-      edges: {}
+      nodes: [],
+      edges: [] 
     };
-    result.nodes[key] = start;
+    result.nodes.push(start);
     _.each(top10, function(n) {
         var _key = n._key + "-" + key;
         var _eid = "edges/" + _key;
-        result.edges[_key] = {
+        result.edges.push({
             _id: _eid,
             _key: _key,
             _to: n._id,
-            _from: id
-        };
-        result.nodes[n._key] = n;
+            _from: id,
+            weight: n.count
+        });
+        result.nodes.push(n);
     });
     res.json(result);
   }).pathParam("id", {
