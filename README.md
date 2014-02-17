@@ -14,7 +14,7 @@
     $ foxx-manager install marvel-universe /superheroes
 
 
-3. Then download the download the [data files](https://github.com/triAGENS/ArangoDB-Data/tree/master/Graphs/Marvel%20Universe) (not included here). The repo is quite large, note that you only need the files in the "Marvel Universe" directory. Use the import.sh script to load the data into ArangoDB.
+3. Then download the download the [data files](https://github.com/triAGENS/ArangoDB-Data/tree/master/Graphs/Marvel%20Universe) (not included here). The repo is quite large, note that you only need the files in the "Marvel Universe" directory. Use the import.sh script in the "Marvel Universe" directory to load the data into ArangoDB.
 
 4. The App gets mounted to '/superheroes'. Point your browser to `http://localhost:8529/superheroes/` to run the application. 
 
