@@ -36,6 +36,7 @@
     Hero = require("./models/hero").Model,
     _ = require("underscore"),
     db = require("internal").db,
+    joi = require("joi"),
     controller,
     edges,
     vertices,
@@ -59,7 +60,7 @@
     }));
   }).pathParam("content", {
     description: "The string to search for",
-    type: "string"
+    type: joi.string()
   });
 
   /** Get the neighbourhood of a specific hero
@@ -109,6 +110,6 @@
     res.json(result);
   }).pathParam("id", {
     description: "The id of the hero",
-    type: "string"
+    type: joi.string()
   });
 }());
