@@ -32,7 +32,7 @@
   "use strict";
   var Foxx = require("org/arangodb/foxx"),
     ArangoError = require("org/arangodb").ArangoError,
-    Heros = require("./repositories/heros").Repository,
+    Heroes = require("./repositories/heroes").Repository,
     Hero = require("./models/hero").Model,
     _ = require("underscore"),
     db = require("internal").db,
@@ -40,22 +40,22 @@
     controller,
     edges,
     vertices,
-    heros;
+    heroes;
 
   controller = new Foxx.Controller(applicationContext);
   vertices = db._collection("marvel_vertices");
   edges = db._collection("marvel_edges");
-  heros = new Heros(vertices, {
+  heroes = new Heroes(vertices, {
     model: Hero
   });
 
   /** Do a like search on all hero names
    *
-   * This function simply returns the list of all heros containing the given string.
+   * This function simply returns the list of all heroes containing the given string.
    */
   controller.get('/search/:content', function (req, res) {
     var searchString = req.params("content");
-    res.json(_.map(heros.like(searchString), function (h) {
+    res.json(_.map(heroes.like(searchString), function (h) {
       return h.forClient();
     }));
   }).pathParam("content", {

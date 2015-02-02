@@ -9,12 +9,14 @@ function HeroLoaderController($scope, $http) {
 
   var svg = d3.select("#universe").append("svg")
     .attr("width", width)
-    .attr("height", height);
+    .attr("height", height)
+    .append("g")
+    .attr("transform","translate(200, 150)scale(0.5)");
 
   var nodeForId = function(id) {
     var i = 0;
     for (i=0; i < $scope.graph.nodes.length; i++) {
-      if ($scope.graph.nodes[i]._id === id) {
+      if ($scope.graph.nodes[i]._key === id) {
         return $scope.graph.nodes[i];
       }
     }

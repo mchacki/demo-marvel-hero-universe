@@ -34,6 +34,7 @@
     Hero;
 
   Hero = Foxx.Model.extend({
+
   }, {
     // "Class" Properties
     attributes: {

@@ -1,7 +1,7 @@
 {
   "name": "marvel-universe",
   "version": "1.0.0",
-  "description": "An Application to view the marvel super heros universe. Frontend build with AngularJS.",
+  "description": "An Application to view the marvel super heroes universe. Frontend build with AngularJS.",
   "author": "Michael Hackstein",
   "license": "Apache 2 License",
   "repository": {
