@@ -31,7 +31,7 @@
 (function () {
   "use strict";
   var Foxx = require("org/arangodb/foxx"),
-      joi = require("org/arangodb/joi"),
+      joi = require("joi"),
     Hero;
 
   Hero = Foxx.Model.extend({
