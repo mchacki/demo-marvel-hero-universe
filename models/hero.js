@@ -31,17 +31,16 @@
 (function () {
   "use strict";
   var Foxx = require("org/arangodb/foxx"),
+      joi = require("org/arangodb/joi"),
     Hero;
 
   Hero = Foxx.Model.extend({
-
-  }, {
-    // "Class" Properties
-    attributes: {
-      _key: "string",
-      name: "string",
-      realName: "string"
+    schema: {
+      _key: joi.string().required(),
+      name: joi.string().required(),
+      realName: joi.string()
     }
+
   });
 
   exports.Model = Hero;

@@ -44,7 +44,7 @@
         "@col": this.collection.name(),
         str: "%" + content + "%"
       }).toArray(), function (rawHero) {
-        var hero = new this.modelPrototype(rawHero);
+        var hero = new this.model(rawHero);
         return hero;
       }, this);
     }
