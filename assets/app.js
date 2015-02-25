@@ -16,7 +16,7 @@ function HeroLoaderController($scope, $http) {
   var nodeForId = function(id) {
     var i = 0;
     for (i=0; i < $scope.graph.nodes.length; i++) {
-      if ($scope.graph.nodes[i]._key === id) {
+      if ($scope.graph.nodes[i]._id === id) {
         return $scope.graph.nodes[i];
       }
     }
