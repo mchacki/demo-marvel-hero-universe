@@ -14,12 +14,14 @@
     "demo"
   ],
   "engines": {
-    "arangodb": "1.4"
+    "arangodb": ">=1.4"
   },
   "controllers": {
     "/": "marvel.js"
   },
-  "setup": "scripts/setup.js",
+  "scripts" : {
+    "setup": "scripts/setup.js"
+  },
   "assets": {
     "index.html": {
       "files": [
